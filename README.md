@@ -18,7 +18,7 @@ startServer({
     // CHANGE THIS IF YOU DID NOT USE THE DEFAULT 80 AS ngrok said
     port: 80,
     // YOUR CUSTOM HANDLER
-    handleApplicationCommand() {
+    handleApplicationCommand(payload) {
       // Handle the command
       if (payload.data?.name === "ping") {
         return {
