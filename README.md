@@ -6,7 +6,7 @@ As this is currently, not finalized please expect breaking changes. A much bette
 1. Install ngrock https://ngrok.com
 2. Follow instructions to get ngrok running https://dashboard.ngrok.com/get-started/setup
 3. Go to discord.dev login and open the bot dashboard
-4. Get your public keey and paste it below
+4. Get your public key and paste it below
 
 
 ```ts
