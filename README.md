@@ -2,44 +2,20 @@
 
 As this is currently, not finalized please expect breaking changes. A much better in depth guide will come in the near future.
 
-0. Install Deno https://deno.land
-1. Install ngrock https://ngrok.com
-2. Follow instructions to get ngrok running https://dashboard.ngrok.com/get-started/setup
-3. Go to discord.dev login and open the bot dashboard
-4. Get your public key and paste it below
+1. Install Deno https://deno.land
+2. Install ngrock https://ngrok.com
+3. Follow instructions to get ngrok running https://dashboard.ngrok.com/get-started/setup
+4. Go to discord.dev login and open the bot dashboard
+5. Get your public key and paste it a configs.ts file. There is an `configs.example.ts` file you can rename.
+6. INVITE YOUR BOT USING THE `applications.scope` first before you do the next step.
+7. `deno run -A -q mod.ts`
+8. Type `/ping` in your server to test.
+9. Enjoy!
 
+## Deploy
 
-```ts
-import { startServer } from "https://raw.githubusercontent.com/discordeno/discordeno/slash-cmds/src/interactions/mod.ts";
-import { InteractionResponseType } from "https://raw.githubusercontent.com/discordeno/discordeno/slash-cmds/src/interactions/types/mod.ts";
+Deploy your code to any serverless platform.
 
-startServer({
-    publicKey: "PUBLIC_KEY_HERE_FROM_YOUR_BOT_DASHBOARD",
-    // CHANGE THIS IF YOU DID NOT USE THE DEFAULT 80 AS ngrok said
-    port: 80,
-    // YOUR CUSTOM HANDLER
-    handleApplicationCommand(payload) {
-      // Handle the command
-      if (payload.data?.name === "ping") {
-        return {
-          status: 200,
-          body: {
-            type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-            data: { content: "Pong! Discordeno best lib!" },
-          },
-        };
-      }
+## Contributions
 
-      return {
-        status: 200,
-        body: {
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: {
-            content:
-              "Whoopsies! Seems the handling for this command is missing. Please contact my developers!",
-          },
-        },
-      };
-    }
-})
-```
+Please help contribute as much as possible by sending pull requests. Thank you!
