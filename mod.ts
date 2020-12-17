@@ -1,31 +1,14 @@
+import { handleCommandPayload } from "./commandHandler.ts";
 import { startServer, InteractionResponseType } from "./deps.ts";
+
+console.log("Beginning Bot Startup Process...");
+console.log("Step 1: Loading your commands.");
+
 
 startServer({
     publicKey: "PUBLIC_KEY_HERE_FROM_YOUR_BOT_DASHBOARD",
     // CHANGE THIS IF YOU DID NOT USE THE DEFAULT 80 AS ngrok said
-    port: 80,
+    port: 8000,
     // YOUR CUSTOM HANDLER
-    handleApplicationCommand: async function (payload) {
-      // Handle the command
-      if (payload.data?.name === "ping") {
-        return {
-          status: 200,
-          body: {
-            type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-            data: { content: "Pong! Discordeno best lib!" },
-          },
-        };
-      }
-
-      return {
-        status: 200,
-        body: {
-          type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-          data: {
-            content:
-              "Whoopsies! Seems the handling for this command is missing. Please contact my developers!",
-          },
-        },
-      };
-    }
+    handleApplicationCommand: handleCommandPayload
 })
