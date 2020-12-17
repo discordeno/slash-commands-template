@@ -12,8 +12,8 @@ createCommand({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: {
           content:
-          `<@!${payload.member.user.id}> Ping! It's ........ Discordeno! Best lib!`,
-        }
+            `<@!${payload.member.user.id}> Ping! It's ........ Discordeno! Best lib!`,
+        },
       },
     };
   },

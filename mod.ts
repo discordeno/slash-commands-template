@@ -8,15 +8,15 @@ console.log("Beginning Startup Process...");
 
 console.log("Step 1: Loading your commands.");
 await importDirectory(Deno.realPathSync("./commands"));
-console.log(`Loaded ${botCache.commands.size} commands.`);
+console.log(`Loaded ${botCache.commands.size} command(s).`);
 
-console.log("Step 2: Loading your arguments handlers.")
+console.log("Step 2: Loading your arguments handlers.");
 // await importDirectory(Deno.realPathSync("./arguments"));
-console.log(`Loaded ${botCache.arguments.size} commands.`);
+console.log(`Loaded ${botCache.arguments.size} custom argument(s).`);
 
 console.log("Step 3: Loading your inhibitors");
 // await importDirectory(Deno.realPathSync("./inhibitors"));
-console.log(`Loaded ${botCache.inhibitors.size} commands.`);
+console.log(`Loaded ${botCache.inhibitors.size} inhibitor(s).`);
 
 // This fetch process makes sure we can avoid post/creating dupes on startup
 console.log("Step 4: Fetching your applications existing commands.");
