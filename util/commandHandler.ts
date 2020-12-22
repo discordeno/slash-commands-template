@@ -1,4 +1,4 @@
-import { getTime } from "./utils/helpers.ts";
+import { getTime } from "./helpers.ts";
 import {
   bgBlack,
   bgBlue,
@@ -11,9 +11,9 @@ import {
   InteractionResponseType,
   red,
   white,
-} from "./deps.ts";
+} from "../deps.ts";
 import { botCache } from "./cache.ts";
-import { SlashCommand } from "./types/commands.ts";
+import { SlashCommand } from "../types/commands.ts";
 
 export const logCommand = (
   type: "Failure" | "Success" | "Trigger" | "Slowmode" | "Missing" | "Invalid",
