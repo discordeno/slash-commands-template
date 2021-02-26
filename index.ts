@@ -1,4 +1,5 @@
 import "https://raw.githubusercontent.com/cloudflare/workers-types/master/index.d.ts";
+import { handleCommandPayload } from "./util/commandHandler.ts";
 
 declare global {
   interface FetchEvent extends Event {
@@ -12,8 +13,8 @@ addEventListener("fetch", async (event) => {
     const signature = event.request.headers.get("X-Signature-Ed25519");
     const timestamp = event.request.headers.get("X-Signature-Timestamp");
 
-    if (!signature || !timestamp) {
-      return new Response(JSON.stringify({ error: "Bad request" }), {
+    if (!signature || !timestamp || !event.request.body) {
+      return new Response(JSON.stringify({ error: "Bad request! Missing signature, timestamp headers or a body." }), {
         status: 400,
       });
     }
@@ -29,7 +30,7 @@ addEventListener("fetch", async (event) => {
       );
     }
 
-    const response = await handlePayload(event.request.body);
+    const response = await handleCommandPayload(event.request.body);
     return new Response(JSON.stringify(response.status ? response.body : response), {
       status: response.status || 200,
     });
