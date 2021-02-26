@@ -32,26 +32,6 @@ export function createInhibitor(inhibitor: SlashInhibitor) {
   botCache.inhibitors.set(inhibitor.name, inhibitor);
 }
 
-// Very important to make sure files are reloaded properly
-let uniqueFilePathCounter = 0;
-/** This function allows reading all files in a folder. Useful for loading/reloading commands, inhibitors etc */
-export async function importDirectory(path: string) {
-  const files = Deno.readDirSync(Deno.realPathSync(path));
-
-  for (const file of files) {
-    if (!file.name) continue;
-
-    const currentPath = `${path}/${file.name}`;
-    if (file.isFile) {
-      await import(`file:///${currentPath}#${uniqueFilePathCounter}`);
-      continue;
-    }
-
-    importDirectory(currentPath);
-  }
-  uniqueFilePathCounter++;
-}
-
 export function getTime() {
   const now = new Date();
   const hours = now.getHours();

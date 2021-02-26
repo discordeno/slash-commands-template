@@ -1,4 +1,1 @@
 export const PUBLIC_KEY = "PUBLIC_KEY_HERE_FROM_DEV_PORTAL";
-
-// CHANGE THIS IF YOU DID NOT USE THE DEFAULT 80 AS ngrok said
-export const PORT = 8080;
