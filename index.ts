@@ -30,7 +30,7 @@ addEventListener("fetch", async (event) => {
     }
 
     const response = await handlePayload(event.request.body);
-    return new Response(JSON.stringify(response.body), {
+    return new Response(JSON.stringify(response.status ? response.body : response), {
       status: response.status || 200,
     });
   } catch (error) {
