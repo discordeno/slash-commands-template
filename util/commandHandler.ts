@@ -137,14 +137,11 @@ async function executeCommand(command: SlashCommand, payload: Interaction) {
     logCommand("Failure", payload);
     console.error(error);
     return {
-      status: 200,
-      body: {
-        // In case user can take a screenshot and show you what they typed exactly.
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: {
-          content:
-            "Whoopsies! Seems something went horribly wrong. Please contact my developers!",
-        },
+      // In case user can take a screenshot and show you what they typed exactly.
+      type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+      data: {
+        content:
+          "Whoopsies! Seems something went horribly wrong. Please contact my developers!",
       },
     };
   }
@@ -160,14 +157,11 @@ export async function handleCommandPayload(payload: Interaction) {
     console.error("MISSING COMMAND IN BOTCACHE:", payload);
     // Response to the user
     return {
-      status: 200,
-      body: {
-        // In case user can take a screenshot and show you what they typed exactly.
-        type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
-        data: {
-          content:
-            "Whoopsies! Seems the handling for this command is missing. Please contact my developers!",
-        },
+      // In case user can take a screenshot and show you what they typed exactly.
+      type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
+      data: {
+        content:
+          "Whoopsies! Seems the handling for this command is missing. Please contact my developers!",
       },
     };
   }
