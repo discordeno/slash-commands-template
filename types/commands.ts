@@ -13,10 +13,19 @@ export interface SlashCommand {
   /** The type of command. Either global or guild. By default this will be global. */
   type?: "global" | "guild";
   /** The function that will be executed when this command is ran */
-  execute(payload: Interaction, args: any): Promise<{
-    status?: number | undefined;
-    body: InteractionResponse;
-  }>;
+  execute(payload: Interaction, args: any):
+    | Promise<
+      | {
+        status?: number | undefined;
+        body: InteractionResponse;
+      }
+      | InteractionResponse
+    >
+    | {
+      status?: number | undefined;
+      body: InteractionResponse;
+    }
+    | InteractionResponse;
   /** The subcommands */
   subcommands?: SlashCommand[];
 }
