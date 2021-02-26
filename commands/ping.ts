@@ -5,7 +5,7 @@ createCommand({
   name: "ping",
   description: "Mason, Mason on the wall, whose the finest lib, of them all?",
   type: "global",
-  execute: async function (payload) {
+  execute: function (payload) {
     return {
       type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
       data: {
