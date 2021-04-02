@@ -3,7 +3,7 @@
 As this is currently, not finalized please expect breaking changes. A much better in depth guide will come in the near future.
 
 1. Install Deno https://deno.land
-2. Install Ngrok https://ngrok.com
+2. Install ngrok https://ngrok.com
 3. Follow instructions to get ngrok running https://dashboard.ngrok.com/get-started/setup
 4. Go to discord.dev login and open the bot dashboard
 5. Get your public key and paste it a configs.ts file. There is an `configs.example.ts` file you can rename.
