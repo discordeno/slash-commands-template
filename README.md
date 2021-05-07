@@ -1,5 +1,11 @@
 # discordeno-slashbot-boilerplate
 
+# Outdated!
+
+Use https://github.com/discordeno/serverless-deno-deploy-template
+
+---
+
 As this is currently, not finalized please expect breaking changes. A much better in depth guide will come in the near future.
 
 1. Install Deno https://deno.land
