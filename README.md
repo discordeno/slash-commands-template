@@ -2,7 +2,7 @@
 
 # Outdated!
 
-Use https://github.com/discordeno/serverless-deno-deploy-template
+This repo is outdated and no longer maintained. Please use https://github.com/discordeno/serverless-deno-deploy-template
 
 ---
 
